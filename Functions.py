@@ -221,7 +221,7 @@ def sharesSell(money):
         print("")
         j = 1 
         for i in new_company_list:
-            print(f"{j}. {i["name"]:<15}  Акций на руках: {str(i["purchased"])}")
+            print(f"{j}. {i['name']:<15}  Акций на руках: {i['purchased']}")
             j += 1
         print("")
         
