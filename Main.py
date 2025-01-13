@@ -4,7 +4,7 @@ import time
 import random
 
 from Companys import companyList
-from Functions import start, checkList, purchasedSharesCheck, sharesBuying
+from Functions import start, checkList, purchasedSharesCheck, sharesBuying, sharesSell
 from GlobalVariables import money
 
 
@@ -25,21 +25,27 @@ while True:
     print("")
 
 
-    answer = input()
-    if answer == "1":
-        checkList()
-    elif answer == "2":
-        purchasedSharesCheck()
-    elif answer == "3":
-        money = sharesBuying(money)
-    elif answer == "4":
-       pass
-    elif answer == "5":
-        pass
-    else:
-        print("Некорректный ввод, попробуйте заново")
-        time.sleep(1)
-        os.system('cls' if os.name == 'nt' else 'clear')
+    while True:   
+        answer = input()
+        if answer == "1":
+            checkList()
+            break
+        elif answer == "2":
+            purchasedSharesCheck()
+            break
+        elif answer == "3":
+            money = sharesBuying(money)
+            break
+        elif answer == "4":
+            money = sharesSell(money)
+            break
+        elif answer == "5":
+            pass
+            break
+        else:
+            print("Некорректный ввод, попробуйте заново")
+            time.sleep(1)
+            os.system('cls' if os.name == 'nt' else 'clear')
 
 
 

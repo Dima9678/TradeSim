@@ -1,5 +1,3 @@
-from tabulate import tabulate
-
 
 companyList = [
     {"name":"Т-Технологии",                       "price":2900.0,        "purchased": 0},
@@ -16,10 +14,10 @@ companyList = [
     {"name":"Сургутнефтегаз",                     "price":23.4,          "purchased": 0},
     {"name":"Магнит",                             "price":4882.5,        "purchased": 0},
     {"name":"Нор.Никель",                         "price":116.26,        "purchased": 0},
-    {"name":"Татнефть",                           "price":653.5,         "purchased": 0},
+    {"name":"Татнефть",                           "price":653.5,         "purchased": 4},
     {"name":"Банк ВТБ",                           "price":79.28,         "purchased": 0},
     {"name":"Аэрофлот-росс.авиалин",              "price":60.99,         "purchased": 0},
-    {"name":"Система",                            "price":15.036,        "purchased": 0},
+    {"name":"Система",                            "price":15.036,        "purchased": 1},
     {"name":"НЛМК",                               "price":149.34,        "purchased": 0},
     {"name":"Самолет",                            "price":996.0,         "purchased": 0},
     {"name":"Полюс",                              "price":14886.0,       "purchased": 0},
