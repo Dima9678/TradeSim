@@ -12,7 +12,7 @@ start()
 
 
 while True:
-    print("Ваши деньги: " + str(money))
+    print("Ваши деньги: " + str(round(money, 2)))
     print("")
     print("Выберите действие")
 
@@ -31,7 +31,7 @@ while True:
     elif answer == "2":
         purchasedSharesCheck()
     elif answer == "3":
-        sharesBuying()
+        money = sharesBuying(money)
     elif answer == "4":
        pass
     elif answer == "5":
