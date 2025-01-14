@@ -25,28 +25,22 @@ while True:
     print("")
 
 
-    while True:   
-        answer = input()
-        if answer == "1":
-            checkList()
-            break
-        elif answer == "2":
-            purchasedSharesCheck()
-            break
-        elif answer == "3":
-            money = sharesBuying(money)
-            break
-        elif answer == "4":
-            money = sharesSell(money)
-            break
-        elif answer == "5":
-            pass
-            break
-        else:
-            print("Некорректный ввод, попробуйте заново")
-            time.sleep(1)
-            os.system('cls' if os.name == 'nt' else 'clear')
-
-
-
-
+    
+    answer = input()
+    if answer == "1":
+        checkList()
+    elif answer == "2":
+        purchasedSharesCheck()
+    elif answer == "3":
+        money = sharesBuying(money)
+    elif answer == "4":
+        money = sharesSell(money)
+    elif answer == "5":
+        print("Эта функуия пока недоступка, ИДИ НАХУЙ")
+        time.sleep(1)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+    else:
+        print("Некорректный ввод, попробуйте заново")
+        time.sleep(1)
+        os.system('cls' if os.name == 'nt' else 'clear')
