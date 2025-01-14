@@ -4,7 +4,9 @@ import time
 import random
 
 from Companys import companyList
-from Functions import start, checkList, purchasedSharesCheck, sharesBuying, sharesSell
+from Functions import start, checkList, purchasedSharesCheck
+from BuyFunc import sharesBuying
+from SellFunc import sharesSell
 from GlobalVariables import money
 
 
