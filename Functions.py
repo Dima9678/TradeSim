@@ -21,7 +21,9 @@ def start():
 def checkList():
     os.system('cls' if os.name == 'nt' else 'clear')
     for i in companyList:
-        print(f"{i['name']:<35}Стоимость акции:{i['price']:>10.2f}")
+        print(f"{i['name']:<35}")
+        print(f"Стоимость акции:{i['price']:>10.2f}")
+        print("Акций у вас на руках: " + str(i["purchased"]))
         time.sleep(0.02)
 
     print("")
@@ -34,10 +36,7 @@ def checkList():
         else:
             print("Неправильный ввод, повторите еще раз")
             print("")
-
-
     os.system('cls' if os.name == 'nt' else 'clear')
-
 
 
 
@@ -88,7 +87,9 @@ def sharesBuying(money):
     print("Список акций:")
     j = 1
     for i in companyList:
-        print(f"{j}. {i['name']:<35}Стоимость акции:{i['price']:>10.2f}")
+        print(f"{j}. {i['name']}")
+        print(f"Стоимость акции: {i['price']}")
+        print("")    
         j += 1
         time.sleep(0.01)
     print("")
@@ -233,6 +234,9 @@ def sharesSell(money):
             if answer == "0":
                 flag1 = True
                 break
+            elif answer > str(len(new_company_list) - 1):
+                print("Недействительнй ввод")
+                print("")
             elif answer.isdigit() and answer != "0":
                 answer = int(answer)
                 companyName = new_company_list[answer - 1]["name"]
