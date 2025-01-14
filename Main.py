@@ -4,10 +4,10 @@ import time
 import random
 
 from Companys import companyList
-from Functions import start, checkList, purchasedSharesCheck
+from Functions import start, checkList, purchasedSharesCheck, spending
 from BuyFunc import sharesBuying
 from SellFunc import sharesSell
-from GlobalVariables import money, stepCount
+from GlobalVariables import money, stepCount, consumption, sharesConsumption
 from StepFunc import nextStep
 
 
@@ -15,6 +15,7 @@ start()
 
 
 while True:
+    global sharesConsumption
     print("Ход: " + str(stepCount))
     print("Ваши деньги: " + str(round(money, 2)))
     print("")
@@ -41,8 +42,9 @@ while True:
     elif answer == "4":
         money = sharesSell(money)
     elif answer == "5":
+        money, sharesConsumption = spending(money, sharesConsumption)
         stepCount += 1
-        companyList = nextStep(companyList)
+        companyList, money, sharesConsumption = nextStep(companyList,money, sharesConsumption)
         
         
     else:

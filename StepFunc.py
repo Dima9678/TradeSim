@@ -5,11 +5,10 @@ import random
 from colorama import Fore
 
 from Companys import companyList
-from GlobalVariables import money, stepCount
+from GlobalVariables import money, stepCount, consumption, sharesConsumption
 
 
-def nextStep(companyList):
-    global stepCount
+def nextStep(companyList,money, sharesConsumption):
     #Вероятности разных исходов и сами исходы
 
 
@@ -91,13 +90,15 @@ def nextStep(companyList):
         print(Fore.WHITE + "Статус: " + companyList[k]["status"])
         k += 1
         print("")
-
+    print("")
+    print("Ежедневные траты: " + str(consumption))
+    print("Налог за акции: " + str(sharesConsumption))
+    print("")
     print(Fore.WHITE + "Введите любой символ для продолжения")
     input()
 
 
     #Вывод обновленного списка
     os.system('cls' if os.name == 'nt' else 'clear')
-    stepCount = stepCount + 1
 
-    return companyList
+    return companyList, money, sharesConsumption

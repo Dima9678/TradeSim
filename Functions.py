@@ -2,7 +2,7 @@ import os
 import time
 
 from Companys import companyList
-from GlobalVariables import money
+from GlobalVariables import money, consumption, sharesConsumption
 
 
 
@@ -75,3 +75,18 @@ def purchasedSharesCheck():
 
             
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+
+
+
+def spending(money,sharesConsumption):
+    #Траты каждого хода
+    sharesConsumption = 0.0
+    for i in companyList:
+        if i["purchased"] > 0:
+            sharesConsumption += ((i["price"] / 100) * i["purchased"])
+
+    sharesConsumption = round(sharesConsumption, 2)
+    money = money - consumption - sharesConsumption
+    return money, sharesConsumption
