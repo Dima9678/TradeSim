@@ -7,13 +7,15 @@ from Companys import companyList
 from Functions import start, checkList, purchasedSharesCheck
 from BuyFunc import sharesBuying
 from SellFunc import sharesSell
-from GlobalVariables import money
+from GlobalVariables import money, stepCount
+from StepFunc import nextStep
 
 
 start()
 
 
 while True:
+    print("Ход: " + str(stepCount))
     print("Ваши деньги: " + str(round(money, 2)))
     print("")
     print("Выберите действие")
@@ -29,6 +31,7 @@ while True:
 
     
     answer = input()
+
     if answer == "1":
         checkList()
     elif answer == "2":
@@ -38,9 +41,9 @@ while True:
     elif answer == "4":
         money = sharesSell(money)
     elif answer == "5":
-        print("Эта функуия пока недоступка, ИДИ НАХУЙ")
-        time.sleep(1)
-        os.system('cls' if os.name == 'nt' else 'clear')
+        stepCount += 1
+        companyList = nextStep(companyList)
+        
         
     else:
         print("Некорректный ввод, попробуйте заново")

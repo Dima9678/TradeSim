@@ -2,7 +2,7 @@ import os
 import time
 
 from Companys import companyList
-from GlobalVariables import money
+from GlobalVariables import money, stepCount
 
 
 
@@ -36,7 +36,7 @@ def sharesSell(money):
             if answer == "0":
                 flag1 = True
                 break
-            elif answer > str(len(new_company_list) - 1):
+            elif answer > str(len(new_company_list)):
                 print("Недействительнй ввод")
                 print("")
             elif answer.isdigit() and answer != "0":
