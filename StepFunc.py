@@ -33,35 +33,35 @@ def nextStep(companyList,money, sharesConsumption):
         status = random.choices(events, weights = probabilities, k = 1)[0]
         
         if status == "Акции обвалились":
-            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * 80)
+            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * random.randint(50,81))
             companyList[j]["status"] = status
 
         elif status == "Акции сильно упали":
-            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * 50)
+            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * random.randint(30,51))
             companyList[j]["status"] = status
 
         elif status == "Акции умеренно упали":
-            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * 30)
+            companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * random.randint(15,31))
             companyList[j]["status"] = status
 
         elif status == "Акции примерно сохранились":
             if random.randint(1,2) == 1:
-                companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * 15)
+                companyList[j]["price"] -= act["price"] - ((act["price"] / 100) * random.randint(0,16))
                 companyList[j]["status"] = status
             else:
-                companyList[j]["price"] += act["price"] + ((act["price"] / 100) * 15)
+                companyList[j]["price"] += act["price"] + ((act["price"] / 100) * random.randint(0,16))
                 companyList[j]["status"] = status
 
         elif status == "Акции умеренно поднялись":
-            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * 30)
+            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * random.randint(15,31))
             companyList[j]["status"] = status
 
         elif status == "Акции сильно поднялись":
-            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * 50)
+            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * random.randint(30,51))
             companyList[j]["status"] = status
 
         elif status == "Акции стрельнули":
-            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * 80)
+            companyList[j]["price"] += act["price"] + ((act["price"] / 100) * random.randint(50,81))
             companyList[j]["status"] = status
         j += 1
 
@@ -70,6 +70,12 @@ def nextStep(companyList,money, sharesConsumption):
         companyList[k]["price"] = round(companyList[k]["price"],2)
         k += 1
 
+
+    j = 0
+    for i in companyList:
+        if companyList[j]["price"] <= 10.00:
+            companyList[j]["price"] = 5.00
+        j += 1
 
 
     k = 0

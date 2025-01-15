@@ -81,7 +81,6 @@ def purchasedSharesCheck():
 
 
 
-
 def spending(money,sharesConsumption):
     #Траты каждого хода
     sharesConsumption = 0.0
