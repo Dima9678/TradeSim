@@ -1,8 +1,8 @@
 
 companyList = [
-    {"name":"Т-Технологии",                       "price":2900.0,          "last":0,               "purchased": 1,    "status":""},
-    {"name":"Сбербанк России",                    "price":278.77,          "last":0,               "purchased": 2,    "status":""},
-    {"name":"Газпром",                            "price":126.60,          "last":0,               "purchased": 3,    "status":""},
+    {"name":"Т-Технологии",                       "price":2900.0,          "last":0,               "purchased": 0,    "status":""},
+    {"name":"Сбербанк России",                    "price":278.77,          "last":0,               "purchased": 0,    "status":""},
+    {"name":"Газпром",                            "price":126.60,          "last":0,               "purchased": 0,    "status":""},
     {"name":"ЛУКОЙЛ",                             "price":7022.5,          "last":0,               "purchased": 0,    "status":""},
     {"name":"Корпоративный центр ИКС 5",          "price":2945.0,          "last":0,               "purchased": 0,    "status":""},
     {"name":"Роснефть",                           "price":562.95,          "last":0,               "purchased": 0,    "status":""},
