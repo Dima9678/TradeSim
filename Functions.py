@@ -55,7 +55,9 @@ def purchasedSharesCheck():
     for i in companyList:
         if i['purchased'] > 0:
             bought = True
-            print(f"{i['name']:<35}Количество акций:{i['purchased']:>10.2f}")
+            print("Компания: " + i["name"])
+            print("Акций на руках: " + str(i["purchased"]))
+            print("")
             time.sleep(0.02)
 
     #Если у пользователя нет купленных акций
