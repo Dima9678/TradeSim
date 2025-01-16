@@ -74,8 +74,15 @@ def nextStep(companyList,money, sharesConsumption):
     j = 0
     for i in companyList:
         if companyList[j]["price"] <= 10.00:
-            companyList[j]["price"] = 5.00
+            companyList[j]["price"] = 10.00
         j += 1
+        
+    j = 0
+    for i in companyList:
+        if companyList[j]["price"] >= 70000.00:
+            companyList[j]["price"] = 70000.00
+        j += 1
+        
 
 
     k = 0
